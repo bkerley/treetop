@@ -19,7 +19,13 @@ Matches:
 
 Output from a parser for this grammar looks like this:
 
-![Tree Returned By ParenLanguageParser](./images/paren_language_output.png)
+         "(((a)))"
+        /    |    \
+    "("   "((a))"   ")"
+        /    |    \
+    "("    "(a)"    ")"
+        /    |    \
+    "("     "a"     ")"
 
 This is a parse tree whose nodes are instances of `Treetop::Runtime::SyntaxNode`. What if we could define methods on these node objects? We would then have an object-oriented program whose structure corresponded to the structure of our language. Treetop provides two techniques for doing just this.
 
